@@ -16,14 +16,21 @@ use WolfDen133\WFT\Event\TagReplaceEvent;
 
 use pocketmine\event\Listener;
 
+
+// Create the event listener class
 class EventListener extends Listener {
 
+
+// Listen for the TagReplaceEvent driven by the plugin
   public function onTagReplaceEvent (TagReplaceEvent $event) : void
   {
+    // Get the text from the event
     $text = $event->getText();
     
+    // Replace the tags you need
     $replace = str_replace(["{tag1}", "{tag2}"], ["Value 1", "Value 2"], $text);
     
+    // And replace the text
     $event->setText($replace);
   }
   
